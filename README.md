@@ -27,7 +27,7 @@ Data scientists will be dealing with graph data structure, probably, a great dea
 
 >DGL and PyG frameworks also provide out-of-the-box algorithms for learning on graphs (e.g. Graph Convolutional Networks (GNNs)), bearing the idea that using graphs for prediction tasks can be way more efficient than traditional deep learning algorithms. The topological information encoded in the graph structure tells the algorithm what is essential to look at during training. The topological information and the attributes of nodes/edges are embedded into a vector and used for prediction.
 
-## ***Gene Ontology Directed Acyclic Multigraph***
+**Gene Ontology Directed Acyclic Multigraph**
 
 The Gene Ontology (GO) terms are organized in a hierarchical [directed acyclic multigraph](https://networkx.org/documentation/stable/reference/classes/multidigraph.html). Each GO terms (e.g. GO:0000001) is a node and the edges represent the relationship between them (e.g. *"is_a"*, *"regulates"*). As a directed graph, we have ancestors and descendants nodes, which are refered as *parents* and *children* nodes in the GO graph. Parents are closer to the root of the GO graph, and children terms are more specific regarding the annotation. 
 
