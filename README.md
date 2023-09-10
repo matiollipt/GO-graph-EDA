@@ -12,6 +12,7 @@ Many of the **complex systems** around us have **entities** connected by their *
 <center><b>Figure 1. </b><i>Protein-Protein Interaction (PPI) Networks of Saccharomyces cerevisiae (left) and Homo sapiens(right)</i>. Each node represents one protein, and the edges indicate the proteins that interact. Both interactomes (i.e. <b>proteins connected by their molecular interactions organized in a network</b>) were obtained using yeast two-hybrid (Y2H) technique (Jeong et al., 2001 411(3), Rual et al. Nature 2005: 437(4) - Macmillan Publishers Ltd.)</center>
 
 
+
 Networks are an organizing principle of Nature. The basic idea to abstract real-world networks with their entities and relations into computationally tractable **data structures** goes as follows:
 - **entities** are represented by **nodes**, also known as **vertices**
 - **relations** are represented by **links**, also known as **edges**
