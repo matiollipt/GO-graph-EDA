@@ -33,31 +33,35 @@ Data scientists will probably be dealing with graph data structure a great deal.
 
 **Gene Ontology Directed Acyclic Multigraph**
 
-The Gene Ontology (GO) terms are organized in a hierarchical [directed acyclic multigraph](https://networkx.org/documentation/stable/reference/classes/multidigraph.html). Each GO term (e.g. GO:0000001) is a node and the edges represent the relationship between them (e.g. *"is_a"*, *"regulates"*). As a directed graph, we have ancestors and descendants nodes, which are referred to as *parents* and *children* nodes in the GO graph. Parents are closer to the root of the GO graph, and children's terms are more specific regarding the annotation. 
+The Gene Ontology (GO) terms are organized in a hierarchical [directed acyclic multigraph](https://networkx.org/documentation/stable/reference/classes/multidigraph.html). Each GO term (e.g. GO:0000001) is a node and the edges represent the relationship between them (e.g. *"is_a"*, *"regulates"*). As a directed graph, we have ancestors and descendants nodes, which are referred to as *child* and *parent* nodes in the GO graph. Parents are closer to the root of the GO graph, and children's terms are more specific regarding the annotation. 
+
+<figure><p style=text-align:center;"><img src="diag-dag-example.gif" alt="Mitochondrion parents" width=640px></p></figure>
+<center><b>Figure 3. </b> <i>Parent and child example: mitochondrion</i>. In this figure from <a href="https://geneontology.org/docs/ontology-relations"><i>Relations in the Gene Ontology</i></a>, mitocondrion has two parents: *cytoplasm* and *organelle*, and the parent term *organelle* has two children: *mitochondrion* and *organelle membrane*</center>
 
 Unlike taxonomy trees, where child entities have one parent, a child GO term can have more than one parent. For example: a chloroplast 'is an' organelle and 'is part of' the cytoplasm. The GO graph does not have a single root but three separated by the three major ontologies: Cellular Component (CC), Molecular Function (MF) and Biological Process (BP). These roots are  *is_a* disjoint because there is no such relation between these three ancestors' ontologies.
 
 <figure><p style=text-align:center;"><img src="hexose-biosynthetic-process.png" alt="Hexose Biosynthetic Process" width=640px></p></figure>
-<center><b>Figure 3. </b> <i>The hexose biosynthetic process</i>. The biosynthetic process is a subtype of metabolic process and hexose is a subtype of monosaccharide. (Source: <a href="https://geneontology.org"><i>Gene Ontology Consortium</i></a>)</center>
+<center><b>Figure 4. </b> <i>The hexose biosynthetic process</i>. The biosynthetic process is a subtype of metabolic process and hexose is a subtype of monosaccharide. (Source: <a href="https://geneontology.org"><i>Gene Ontology Consortium</i></a>)</center>
 
 
 Here we perform an Exploratory Data Analysis (EDA) of the GO graph. The EDA presented in this notebook was motivated by the [Critical Assessment of Functional Annotation (CAFA)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1835-8) competition, which is hosted by CAFA initiative to engage the data science community into finding new insights on how to improve the prediction of protein function.
 
 Before that, we will walk through some basic operations on graphs:
-- Create a graph
-- Add nodes
-- Add edges
-- Analyze graph and nodes' degrees
-- Add nodes and edges attributes
-- Analyze graph connectivity
-- Visualize a graph
 
+**1. Basic operations on graphs:**
+- Creating graphs
+- Adding nodes and edges
+- Adding graph, node and edge attributes
+- Analyzing graph and node degrees
+- Analyzing graph connectivity
+- Vizualizing graphs
 
-To explore the GO graph, we will:
-- Read and parse the [GO graph](https://geneontology.org/docs/download-ontology) file
-- Check graph type
-- Visualize nodes' degree distribution
-- Extract and analyze nodes' attributes
-- Split the GO graph
-- Plot sub-graphs
-- Create a dataframe with nodes' attributes
+**2. Exploratory Data Analysis - Gene Ontology Graph**
+- Reading and parsing GO graph data
+- Analyzing graph and nodes' degrees
+- Extracting and visualizing nodes' attributes
+- Analyzing graph connectivity
+- Exploring Parents and Children GO terms
+- Visualizing the GO graph
+- Spliting the GO graph into major sub-ontologies
+- Extracting nodes' attributes into a dataframe
