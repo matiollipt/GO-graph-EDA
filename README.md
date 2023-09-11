@@ -12,6 +12,7 @@ Many of the **complex systems** around us have **entities** connected by their *
 <center><b>Figure 1. </b><i>Protein-Protein Interaction (PPI) Networks of Saccharomyces cerevisiae (left) and Homo sapiens(right)</i>. Each node represents one protein, and the edges indicate the proteins that interact. Both interactomes (i.e. <b>proteins connected by their molecular interactions organized in a network</b>) were obtained using yeast two-hybrid (Y2H) technique (Jeong et al., 2001 411(3), Rual et al. Nature 2005: 437(4) - Macmillan Publishers Ltd.)</center>
 
 
+
 Networks are an organizing principle of Nature. The basic idea to abstract real-world networks with their entities and relations into computationally tractable **data structures** goes as follows:
 - **entities** are represented by **nodes**, also known as **vertices**
 - **relations** are represented by **links**, also known as **edges**
@@ -21,7 +22,6 @@ Networks are an organizing principle of Nature. The basic idea to abstract real-
 
 <figure><p style=text-align:center;"><img src="network_1.png" alt="Simple network example" width=1380px></p></figure>
 <center><b>Figure 2. </b> <i>Undirected Graph, Directed Cyclic Graph (DCG) and  Directed Acyclic Graph (DAG)</i>. In undirected graphs, the edges are bidirectional and equivalent, while in directed graphs  edges have a direction of the relationship that are depicted as arrows departing from a node and arriving at another node (the node can be connected to itself, what we call <i>self-loop</i>). A directed graph is cyclic when we can trace a path from one node and return to the same node, as indicated by the <font color="red"><i>red arrows</i></font>. If the graph has at least one cyclic path, which can be a self-loop, the graph is cyclic. In directed acyclic graphs, such closed cycles do not exist. There are also Multigraphs with multiple edges connecting the same two nodes (<i> parallel edges</i>). This is the case for the Gene Ontology graph.</center>
-
 
 
 Real-world networks can be quite large and complex, with thousands to millions of entities (e.g. social networks, PPI networks, internet addresses, etc.). To analyze such large networks, we can focus on specific features and ignore the others. All examples above can be abstracted into *entities* (users, neurons, websites, ...) represented by nodes and connected by edges denoting their *relations* (friendships, synapses, links, ...). The differences between these networks are related to the size and node/edge composition, but still, the basic building blocks and the math used to analyze them are the same. Thus, **networks follow the same organizing principles and can be analyzed using similar tools**. 
